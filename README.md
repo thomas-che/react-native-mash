@@ -8,6 +8,7 @@ Prise de notes en suivant la formation de Programming with Mash [PlayList YouTub
 Table des matières.
 > * [Utilisation](#Utilisation)
 > * [1 - Installation](#1---Installation)
+> * [2 - Configuration VS Code](#2---Configuration-VS-Code)
 
 
 &nbsp;
@@ -88,5 +89,12 @@ npx react-native run-android
 ```
 
 
+&nbsp;
+## 2 - Configuration VS Code
+---
+Video : https://youtu.be/btxP4dY6Pgc
 
-
+Install de l'extention Vs Code [Android iOS Emulator](https://marketplace.visualstudio.com/items?itemName=DiemasMichiels.emulate) et config les emulator Path.  
+Install [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)  
+Install [React Native Tools](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native)  
+Install [npm Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)  
