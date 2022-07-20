@@ -9,8 +9,9 @@ Table des matières.
 > * [Utilisation](#Utilisation)
 > * [1 - Installation](#1---Installation)
 > * [2 - Configuration VS Code](#2---Configuration-VS-Code)
-> * [3 - Structure & Basic Components in Our First App](#2---Structure-&-Basic-Components-in-Our-First-App)
-> * [4 - Using the State Hook](#2---Using-the-State-Hook)
+> * [3 - Structure & Basic Components in Our First App](#3---Structure-&-Basic-Components-in-Our-First-App)
+> * [4 - Using the State Hook](#4---Using-the-State-Hook)
+> * [5 - Styles & Style Sheet](#5---Styles-&-Style-Sheet)
 
 
 &nbsp;
@@ -117,3 +118,11 @@ Video : https://youtu.be/1lg_IXtjles
 Video : https://youtu.be/9ACpqQR3lQg
 
 On crée une constante object (State Hook) que l'on peut modifier par la suite
+
+
+&nbsp;
+## 5 - Styles & Style Sheet
+---
+Video : https://youtu.be/FgMuqQkGw9Q
+
+Affect le style à un élément avec `style={styles.text}` et le style est écrit dans un objet `StyleSheet`.
