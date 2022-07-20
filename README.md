@@ -9,7 +9,8 @@ Table des matières.
 > * [Utilisation](#Utilisation)
 > * [1 - Installation](#1---Installation)
 > * [2 - Configuration VS Code](#2---Configuration-VS-Code)
-> * [2 - Structure & Basic Components in Our First App](#2---Structure-&-Basic-Components-in-Our-First-App)
+> * [3 - Structure & Basic Components in Our First App](#2---Structure-&-Basic-Components-in-Our-First-App)
+> * [4 - Using the State Hook](#2---Using-the-State-Hook)
 
 
 &nbsp;
@@ -108,3 +109,11 @@ Video : https://youtu.be/1lg_IXtjles
 
 Écrit le code de notre appli dans App.js  
 > Penser à faire les imports des composants
+
+
+&nbsp;
+## 4 - Using the State Hook
+---
+Video : https://youtu.be/9ACpqQR3lQg
+
+On crée une constante object (State Hook) que l'on peut modifier par la suite
