@@ -2,8 +2,8 @@
   "name": "mash-tuto",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start --dev-client",
-    "android": "expo run:android",
+    "start": "npx react-native start",
+    "android": "npx react-native run-android",
     "ios": "expo run:ios",
     "web": "expo start --web",
     "eject": "expo eject"

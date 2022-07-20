@@ -9,6 +9,7 @@ Table des matières.
 > * [Utilisation](#Utilisation)
 > * [1 - Installation](#1---Installation)
 > * [2 - Configuration VS Code](#2---Configuration-VS-Code)
+> * [2 - Structure & Basic Components in Our First App](#2---Structure-&-Basic-Components-in-Our-First-App)
 
 
 &nbsp;
@@ -98,3 +99,12 @@ Install de l'extention Vs Code [Android iOS Emulator](https://marketplace.visual
 Install [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)  
 Install [React Native Tools](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native)  
 Install [npm Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)  
+
+
+&nbsp;
+## 3 - Structure & Basic Components in Our First App
+---
+Video : https://youtu.be/1lg_IXtjles
+
+Écrit le code de notre appli dans App.js  
+> Penser à faire les imports des composants
