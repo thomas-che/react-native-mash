@@ -13,6 +13,7 @@ Table des matières.
 > * [4 - Using the State Hook](#4---Using-the-State-Hook)
 > * [5 - Styles & Style Sheet](#5---Styles-&-Style-Sheet)
 > * [6 - Responsive UI with Flexbox](#6---Responsive-UI-with-Flexbox)
+> * [7 - Responsive UI with Flexbox](#7---List,-ScrollView-&-RefreshControl)
 
 
 &nbsp;
@@ -137,3 +138,25 @@ Video : https://youtu.be/_t21GTZ4pf8
 doc : https://reactnative.dev/docs/flexbox  
 
 Utilise des flexbox pour placer les composants.  
+
+
+&nbsp;
+## 7 - List, ScrollView & RefreshControl
+---
+Video : https://youtu.be/Hy3HudbaU68
+
+Pour que la page soit scrollable alors on ajoute l’élément `ScrollView`.  
+Et pour recharger la page on peut ajouter l’élément `RefreshControl` et utiliser ses attributs pour modifier le refresh.
+```js
+const [refreshing, setRefreshing] = useState(false)
+const onRefresh = () => {
+    setRefreshing(true);
+    steItems([...items, {key:100, item: 'Item 100'}]);
+    setRefreshing(false);
+}
+<RefreshControl 
+    refreshing={refreshing} 
+    onRefresh={onRefresh}
+    colors={['#ff0000']}
+/> 
+```
