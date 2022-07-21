@@ -19,6 +19,7 @@ Table des matières.
 > * [10 - Button, Touchables & Pressable](#10---Button,-Touchables-&-Pressable)
 > * [11 - Alert & Toast Message](#11---Alert-&-Toast-Message)
 > * [12 - Modal & How to Create Custom Alert with it](#12---Modal-&-How-to-Create-Custom-Alert-with-it)
+> * [13 - Image & ImageBackground](#13---Image-&-ImageBackground)
 
 
 &nbsp;
@@ -232,3 +233,11 @@ Video : https://youtu.be/dw7xnbxhBUk
 Doc modal : https://reactnative.dev/docs/modal  
 
 Possible de crée une alert customisé avec un modal.  
+
+
+&nbsp;
+## 13 - Image & ImageBackground
+---
+Video : https://youtu.be/Gb-GTDPFAZE
+
+Pour Afficher une image on utilise un composant `<Image>`. Et si l'on veux que l'image soit en arrière plan alors on prend un composant `<ImageBackground>`.

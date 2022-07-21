@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Button, Linking, ScrollView, RefreshControl, FlatList, SectionList, TextInput, Keyboard, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, Pressable, Alert, ToastAndroid, Modal } from 'react-native';
+import { StyleSheet, Text, View, Button, Linking, ScrollView, RefreshControl, FlatList, SectionList, TextInput, Keyboard, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, Pressable, Alert, ToastAndroid, Modal, Image, ImageBackground } from 'react-native';
 
 export default function App() {
 
@@ -15,7 +15,10 @@ export default function App() {
     }
 
     return (
-        <View style={styles.body}>
+        <ImageBackground 
+            style={styles.body}
+            source={require('./assets/bg.jpg')}
+        >
         <Modal
             visible={showWarning}
             transparent
@@ -66,20 +69,30 @@ export default function App() {
         </Pressable>
         {
             submitted ?
-            <Text style={styles.text}>
-                You are registered as {name}
-            </Text>
+            <View style={styles.body}>
+                <Text style={styles.text}>
+                    You are registered as {name}
+                </Text>
+                <Image
+                    style={styles.image}
+                    source={require('./assets/validator.png')}
+                    resizeMode='stretch'
+                />
+            </View>
             :
-            null
+            <Image
+                style={styles.image}
+                source={require('./assets/error.png')}
+                resizeMode='stretch'
+            />
         }
-        </View >
+        </ImageBackground >
     );
 };
 
 const styles = StyleSheet.create({
     body: {
         flex: 1,
-        backgroundColor: '#ffffff',
         alignItems: 'center',
     },
     text: {
@@ -133,5 +146,10 @@ const styles = StyleSheet.create({
         backgroundColor:'#00ffff',
         borderBottomLeftRadius:20,
         borderBottomRightRadius:20,
+    },
+    image: {
+        width: 100,
+        height: 100,
+        margin: 10
     }
 });
