@@ -14,6 +14,7 @@ Table des matières.
 > * [5 - Styles & Style Sheet](#5---Styles-&-Style-Sheet)
 > * [6 - Responsive UI with Flexbox](#6---Responsive-UI-with-Flexbox)
 > * [7 - Responsive UI with Flexbox](#7---List,-ScrollView-&-RefreshControl)
+> * [8 - FlatList & SectionList with Nested Array](#8---FlatList-&-SectionList-with-Nested-Array)
 
 
 &nbsp;
@@ -160,3 +161,11 @@ const onRefresh = () => {
     colors={['#ff0000']}
 /> 
 ```
+
+
+&nbsp;
+## 8 - FlatList & SectionList with Nested Array
+---
+Video : https://youtu.be/Otp4cCts7oo
+
+Deux autre possibilité d'afficher des listes.  
