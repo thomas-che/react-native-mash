@@ -18,6 +18,7 @@ Table des matières.
 > * [9 - Text Input & Keyboard](#9---Text-Input-&-Keyboard)
 > * [10 - Button, Touchables & Pressable](#10---Button,-Touchables-&-Pressable)
 > * [11 - Alert & Toast Message](#11---Alert-&-Toast-Message)
+> * [12 - Modal & How to Create Custom Alert with it](#12---Modal-&-How-to-Create-Custom-Alert-with-it)
 
 
 &nbsp;
@@ -222,3 +223,12 @@ ToastAndroid.show('message', ToastAndroid.SHORT)
 
 > **Warning**  
 > Toast Message disponible que sur Android. Utiliser une autre méthode pour IOS
+
+
+&nbsp;
+## 12 - Modal & How to Create Custom Alert with it
+---
+Video : https://youtu.be/dw7xnbxhBUk  
+Doc modal : https://reactnative.dev/docs/modal  
+
+Possible de crée une alert customisé avec un modal.  
