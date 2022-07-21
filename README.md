@@ -16,6 +16,7 @@ Table des matières.
 > * [7 - Responsive UI with Flexbox](#7---List,-ScrollView-&-RefreshControl)
 > * [8 - FlatList & SectionList with Nested Array](#8---FlatList-&-SectionList-with-Nested-Array)
 > * [9 - Text Input & Keyboard](#9---Text-Input-&-Keyboard)
+> * [10 - Button, Touchables & Pressable](#10---Button,-Touchables-&-Pressable)
 
 
 &nbsp;
@@ -181,3 +182,15 @@ Video retirer le clavier lorsque l'on quitte la saisie : https://youtu.be/CwnIVd
 
 On peut changer le type de clavier avec `keyboardType` et `secureTextEntry` pour les input password.  
 
+
+&nbsp;
+## 10 - Button, Touchables & Pressable
+---
+Video : https://youtu.be/_eaJlRYjFdo  
+Doc TouchableOpacity : https://reactnative.dev/docs/touchableopacity
+Doc Pressable : https://reactnative.dev/docs/pressable
+
+On peut faire un bouton avec `<Button>` mais le problème c'est que l'on ne peut pas y ajouter du style.  
+On peut imiter un bouton avec un `<TouchableOpacity>` et en lui ajoutant du style. Il y a aussi le `<TouchableHighlight>` pour ajoute une couleur quand on click.  
+Il y a `<TouchableWithoutFeedback>` qui est un élément cliquable mais sans misse en forme possible. Si on veut mettre du style alors on met une View à l’intérieur.  
+Il existe un bouton `<Pressable>` qui détecte quand on clique dessus et pendant combien de temps. On peut ajouter un espace dans le quel le bouton est cliquable avec le paramètre `hitSlop`, et un effet sur les Androids `android_ripple`.  
