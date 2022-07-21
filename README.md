@@ -12,6 +12,7 @@ Table des matières.
 > * [3 - Structure & Basic Components in Our First App](#3---Structure-&-Basic-Components-in-Our-First-App)
 > * [4 - Using the State Hook](#4---Using-the-State-Hook)
 > * [5 - Styles & Style Sheet](#5---Styles-&-Style-Sheet)
+> * [6 - Responsive UI with Flexbox](#6---Responsive-UI-with-Flexbox)
 
 
 &nbsp;
@@ -124,5 +125,15 @@ On crée une constante object (State Hook) que l'on peut modifier par la suite
 ## 5 - Styles & Style Sheet
 ---
 Video : https://youtu.be/FgMuqQkGw9Q
+Doc : https://reactnative.dev/docs/view
 
 Affect le style à un élément avec `style={styles.text}` et le style est écrit dans un objet `StyleSheet`.
+
+
+&nbsp;
+## 6 - Responsive UI with Flexbox
+---
+Video : https://youtu.be/_t21GTZ4pf8
+doc : https://reactnative.dev/docs/flexbox  
+
+Utilise des flexbox pour placer les composants.  
