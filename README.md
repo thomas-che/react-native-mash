@@ -15,6 +15,7 @@ Table des matières.
 > * [6 - Responsive UI with Flexbox](#6---Responsive-UI-with-Flexbox)
 > * [7 - Responsive UI with Flexbox](#7---List,-ScrollView-&-RefreshControl)
 > * [8 - FlatList & SectionList with Nested Array](#8---FlatList-&-SectionList-with-Nested-Array)
+> * [9 - Text Input & Keyboard](#9---Text-Input-&-Keyboard)
 
 
 &nbsp;
@@ -169,3 +170,14 @@ const onRefresh = () => {
 Video : https://youtu.be/Otp4cCts7oo
 
 Deux autre possibilité d'afficher des listes.  
+FlatList est mieux pour les grandes liste, car il ne charge pas toute la liste contrairement a ScrollView, il ne charge que ce qui est affiché.  
+
+
+&nbsp;
+## 9 - Text Input & Keyboard
+---
+Video : https://youtu.be/wZkGaDw1Ydg
+Video retirer le clavier lorsque l'on quitte la saisie : https://youtu.be/CwnIVdleLkU
+
+On peut changer le type de clavier avec `keyboardType` et `secureTextEntry` pour les input password.  
+
