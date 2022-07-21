@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Button, Linking, ScrollView, RefreshControl, FlatList, SectionList, TextInput, Keyboard, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, Pressable,  } from 'react-native';
-import { Alert } from 'react-native-web';
+import { StyleSheet, Text, View, Button, Linking, ScrollView, RefreshControl, FlatList, SectionList, TextInput, Keyboard, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, Pressable, Alert, ToastAndroid } from 'react-native';
 
 export default function App() {
 
@@ -8,7 +7,16 @@ export default function App() {
     const [submited, setSubmited] = useState(false)
    
     onPressHandler = () => {
-        setSubmited(!submited)
+        if( 3 < name.length ){
+            setSubmited(!submited)
+        }else{
+            Alert.alert('Attention', 'le nom +3 char', [
+                {text: 'Not', onPress: () => console.warn('Not presed')},
+                {text: 'Cancel', onPress: () => console.warn('Cancel presed')},
+                {text: 'OK', onPress: () => console.warn('OK presed')}
+            ], {cancelable: true, onDismiss:()=>console.warn('Alert dismiss')})
+            ToastAndroid.show('le nom +3 char', ToastAndroid.SHORT)
+        }
     }
 
 	return (
@@ -24,44 +32,16 @@ export default function App() {
                 <Pressable                  
                     onPress={onPressHandler}
                     hitSlop={{top: 10, right: 10, bottom:10, left:10}}
-                    android_ripple={{color:'#00f'}}
                     style={({pressed})=>[
                         {backgroundColor: pressed? '#444': '#4f4'},
+                        styles.button
                     ]}
                 >
                     <Text>
                         {submited? 'Clear' : 'Submited'}    
                     </Text>
                 </Pressable>
-                <TouchableWithoutFeedback
-                    onPress={onPressHandler}
-                >
-                    <Text>
-                        {submited? 'Clear' : 'Submited'}    
-                    </Text>
-                </TouchableWithoutFeedback>
-                <TouchableHighlight
-                    onPress={onPressHandler}
-                    style={styles.button}
-                    underlayColor='#f00'
-                >
-                    <Text>
-                        {submited? 'Clear' : 'Submited'}    
-                    </Text>
-                </TouchableHighlight>
-                <TouchableOpacity
-                    onPress={onPressHandler}
-                    style={styles.button}
-                >
-                    <Text>
-                        {submited? 'Clear' : 'Submited'}    
-                    </Text>
-                </TouchableOpacity>
-                <Button 
-                    onPress={onPressHandler}
-                    title={submited? 'Clear' : 'Submited'}
-                    color='#0ff'
-                />
+                
                 { submited ? 
                     <Text style={styles.text}>
                         {name}
@@ -97,7 +77,6 @@ const styles = StyleSheet.create({
       button: {
         padding: 10,
         margin: 10,
-        backgroundColor: "#0f0",
         alignItems: 'center',
       }
 });

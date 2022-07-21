@@ -17,6 +17,7 @@ Table des matières.
 > * [8 - FlatList & SectionList with Nested Array](#8---FlatList-&-SectionList-with-Nested-Array)
 > * [9 - Text Input & Keyboard](#9---Text-Input-&-Keyboard)
 > * [10 - Button, Touchables & Pressable](#10---Button,-Touchables-&-Pressable)
+> * [11 - Alert & Toast Message](#11---Alert-&-Toast-Message)
 
 
 &nbsp;
@@ -194,3 +195,30 @@ On peut faire un bouton avec `<Button>` mais le problème c'est que l'on ne peut
 On peut imiter un bouton avec un `<TouchableOpacity>` et en lui ajoutant du style. Il y a aussi le `<TouchableHighlight>` pour ajoute une couleur quand on click.  
 Il y a `<TouchableWithoutFeedback>` qui est un élément cliquable mais sans misse en forme possible. Si on veut mettre du style alors on met une View à l’intérieur.  
 Il existe un bouton `<Pressable>` qui détecte quand on clique dessus et pendant combien de temps. On peut ajouter un espace dans le quel le bouton est cliquable avec le paramètre `hitSlop`, et un effet sur les Androids `android_ripple`.  
+
+
+&nbsp;
+## 11 - Alert & Toast Message
+---
+Video : https://youtu.be/XsPesUur5R4  
+Doc alert : https://reactnative.dev/docs/alert
+
+Afficher une log dans Expo : 
+```js 
+console.warn('OK presed')
+```
+
+Une Alert à un titre, un message et des boutons, 3 boutons max pour les Android. On peut rendre l'alert rejeter si on ajoute l'option `cancelable` et si c'est le cas, on peut exécuter un callback.
+```js
+Alert.alert('Attention', 'message', [
+    {text: 'OK', onPress: () => <...> }
+], {cancelable: true, onDismiss: () => <...> })
+```
+
+Message Toast permet d'afficher un petit message court.
+```js
+ToastAndroid.show('message', ToastAndroid.SHORT)
+```
+
+> **Warning**  
+> Toast Message disponible que sur Android. Utiliser une autre méthode pour IOS
