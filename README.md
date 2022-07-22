@@ -21,6 +21,7 @@ Table des matières.
 > * [12 - Modal & How to Create Custom Alert with it](#12---Modal-&-How-to-Create-Custom-Alert-with-it)
 > * [13 - Image & ImageBackground](#13---Image-&-ImageBackground)
 > * [14 - Custom Components & Props](#14---Custom-Components-&-Props)
+> * [15 - React Navigation V5 - Stack Navigator](#15---React-Navigation-V5---Stack-Navigator)
 
 
 &nbsp;
@@ -250,3 +251,31 @@ Pour Afficher une image on utilise un composant `<Image>`. Et si l'on veux que l
 Video : https://youtu.be/6euMQsGt7Qs  
 
 Comment crée des composants réutilisable et avec de paramètre, les `props`.
+
+
+&nbsp;
+## 15 - React Navigation V5 - Stack Navigator
+---
+Video : https://youtu.be/2ouN6xeF6Hk  
+Doc navigation prop : https://reactnavigation.org/docs/navigation-prop
+
+Install [React Navigation](https://reactnavigation.org/docs/getting-started)
+```bash
+npm install @react-navigation/native
+npm install react-native-screens react-native-safe-area-context
+```
+
+Puis le module [stack](https://reactnavigation.org/docs/stack-navigator)
+```bash
+npm install @react-navigation/stack
+```
+
+Correction de bug :  
+https://stackoverflow.com/questions/55358811/error-unable-to-resolve-module-react-native-gesture-handler
+```bash
+npm install react-native-gesture-handler
+```
+
+On cree la navigation avec `<NavigationContainer>` et la navigation entre les page avec un objet `Stack`.  
+On definit les pages dans notre `App.js` qui seront en réalité des composants avec un nom.  
+On passe en `prop` dans les composants des pages la `navigation` pour changer de page selon l'action.  
