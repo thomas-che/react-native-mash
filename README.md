@@ -103,7 +103,7 @@ npx react-native run-android
 &nbsp;
 ## 2 - Configuration VS Code
 ---
-Video : https://youtu.be/btxP4dY6Pgc
+Video : https://youtu.be/btxP4dY6Pgc  
 
 Install de l'extention Vs Code [Android iOS Emulator](https://marketplace.visualstudio.com/items?itemName=DiemasMichiels.emulate) et config les emulator Path.  
 Install [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)  
@@ -114,7 +114,7 @@ Install [npm Intellisense](https://marketplace.visualstudio.com/items?itemName=c
 &nbsp;
 ## 3 - Structure & Basic Components in Our First App
 ---
-Video : https://youtu.be/1lg_IXtjles
+Video : https://youtu.be/1lg_IXtjles  
 
 Écrit le code de notre appli dans App.js  
 > Penser à faire les imports des composants
@@ -123,7 +123,7 @@ Video : https://youtu.be/1lg_IXtjles
 &nbsp;
 ## 4 - Using the State Hook
 ---
-Video : https://youtu.be/9ACpqQR3lQg
+Video : https://youtu.be/9ACpqQR3lQg  
 
 On crée une constante object (State Hook) que l'on peut modifier par la suite
 
@@ -131,8 +131,8 @@ On crée une constante object (State Hook) que l'on peut modifier par la suite
 &nbsp;
 ## 5 - Styles & Style Sheet
 ---
-Video : https://youtu.be/FgMuqQkGw9Q
-Doc : https://reactnative.dev/docs/view
+Video : https://youtu.be/FgMuqQkGw9Q  
+Doc : https://reactnative.dev/docs/view  
 
 Affect le style à un élément avec `style={styles.text}` et le style est écrit dans un objet `StyleSheet`.
 
@@ -140,7 +140,7 @@ Affect le style à un élément avec `style={styles.text}` et le style est écri
 &nbsp;
 ## 6 - Responsive UI with Flexbox
 ---
-Video : https://youtu.be/_t21GTZ4pf8
+Video : https://youtu.be/_t21GTZ4pf8  
 doc : https://reactnative.dev/docs/flexbox  
 
 Utilise des flexbox pour placer les composants.  
@@ -149,7 +149,7 @@ Utilise des flexbox pour placer les composants.
 &nbsp;
 ## 7 - List, ScrollView & RefreshControl
 ---
-Video : https://youtu.be/Hy3HudbaU68
+Video : https://youtu.be/Hy3HudbaU68  
 
 Pour que la page soit scrollable alors on ajoute l’élément `ScrollView`.  
 Et pour recharger la page on peut ajouter l’élément `RefreshControl` et utiliser ses attributs pour modifier le refresh.
@@ -171,7 +171,7 @@ const onRefresh = () => {
 &nbsp;
 ## 8 - FlatList & SectionList with Nested Array
 ---
-Video : https://youtu.be/Otp4cCts7oo
+Video : https://youtu.be/Otp4cCts7oo  
 
 Deux autre possibilité d'afficher des listes.  
 FlatList est mieux pour les grandes liste, car il ne charge pas toute la liste contrairement a ScrollView, il ne charge que ce qui est affiché.  
@@ -180,8 +180,8 @@ FlatList est mieux pour les grandes liste, car il ne charge pas toute la liste c
 &nbsp;
 ## 9 - Text Input & Keyboard
 ---
-Video : https://youtu.be/wZkGaDw1Ydg
-Video retirer le clavier lorsque l'on quitte la saisie : https://youtu.be/CwnIVdleLkU
+Video : https://youtu.be/wZkGaDw1Ydg  
+Video retirer le clavier lorsque l'on quitte la saisie : https://youtu.be/CwnIVdleLkU  
 
 On peut changer le type de clavier avec `keyboardType` et `secureTextEntry` pour les input password.  
 
@@ -190,8 +190,8 @@ On peut changer le type de clavier avec `keyboardType` et `secureTextEntry` pour
 ## 10 - Button, Touchables & Pressable
 ---
 Video : https://youtu.be/_eaJlRYjFdo  
-Doc TouchableOpacity : https://reactnative.dev/docs/touchableopacity
-Doc Pressable : https://reactnative.dev/docs/pressable
+Doc TouchableOpacity : https://reactnative.dev/docs/touchableopacity  
+Doc Pressable : https://reactnative.dev/docs/pressable  
 
 On peut faire un bouton avec `<Button>` mais le problème c'est que l'on ne peut pas y ajouter du style.  
 On peut imiter un bouton avec un `<TouchableOpacity>` et en lui ajoutant du style. Il y a aussi le `<TouchableHighlight>` pour ajoute une couleur quand on click.  
@@ -203,7 +203,7 @@ Il existe un bouton `<Pressable>` qui détecte quand on clique dessus et pendant
 ## 11 - Alert & Toast Message
 ---
 Video : https://youtu.be/XsPesUur5R4  
-Doc alert : https://reactnative.dev/docs/alert
+Doc alert : https://reactnative.dev/docs/alert  
 
 Afficher une log dans Expo : 
 ```js 
@@ -238,6 +238,6 @@ Possible de crée une alert customisé avec un modal.
 &nbsp;
 ## 13 - Image & ImageBackground
 ---
-Video : https://youtu.be/Gb-GTDPFAZE
+Video : https://youtu.be/Gb-GTDPFAZE  
 
 Pour Afficher une image on utilise un composant `<Image>`. Et si l'on veux que l'image soit en arrière plan alors on prend un composant `<ImageBackground>`.
