@@ -22,6 +22,7 @@ Table des matières.
 > * [13 - Image & ImageBackground](#13---Image-&-ImageBackground)
 > * [14 - Custom Components & Props](#14---Custom-Components-&-Props)
 > * [15 - React Navigation V5 - Stack Navigator](#15---React-Navigation-V5---Stack-Navigator)
+> * [16 - React Navigation V5 - Tab Navigator - Material Tab at Bottom &Top](#16---React-Navigation-V5---Tab-Navigator---Material-Tab-at-Bottom-&Top)
 
 
 &nbsp;
@@ -279,3 +280,46 @@ npm install react-native-gesture-handler
 On cree la navigation avec `<NavigationContainer>` et la navigation entre les page avec un objet `Stack`.  
 On definit les pages dans notre `App.js` qui seront en réalité des composants avec un nom.  
 On passe en `prop` dans les composants des pages la `navigation` pour changer de page selon l'action.  
+
+
+&nbsp;
+## 16 - React Navigation V5 - Tab Navigator - Material Tab at Bottom &Top
+---
+Video : https://youtu.be/_031dsQNy88  
+Doc tab navigation : https://reactnavigation.org/docs/tab-based-navigation/  
+Doc vect icon : https://github.com/oblador/react-native-vector-icons  
+Doc material bottom tab : https://reactnavigation.org/docs/material-bottom-tab-navigator   
+
+Install Tab navigation
+```bash
+npm install @react-navigation/bottom-tabs
+```
+
+Install d'une lib de vector icon
+```bash
+npm install --save react-native-vector-icons
+```
+
+Puis dans `./android/app/build.gradle` on ajoute la ligne au debut
+```bash
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+```
+
+Et enfin
+```bash
+cd android/
+./gradlew clean
+```
+
+On a 3 facons de cree une une bar de naviagetion. Simple ou avec material.
+
+Install de Material bottom tab navigator
+```bash
+npm install @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons
+```
+
+Install de Material top tab naviagtor
+```bash
+npm install @react-navigation/material-top-tabs react-native-tab-view
+npm install react-native-pager-view
+```
