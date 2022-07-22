@@ -20,6 +20,7 @@ Table des matières.
 > * [11 - Alert & Toast Message](#11---Alert-&-Toast-Message)
 > * [12 - Modal & How to Create Custom Alert with it](#12---Modal-&-How-to-Create-Custom-Alert-with-it)
 > * [13 - Image & ImageBackground](#13---Image-&-ImageBackground)
+> * [14 - Custom Components & Props](#14---Custom-Components-&-Props)
 
 
 &nbsp;
@@ -241,3 +242,11 @@ Possible de crée une alert customisé avec un modal.
 Video : https://youtu.be/Gb-GTDPFAZE  
 
 Pour Afficher une image on utilise un composant `<Image>`. Et si l'on veux que l'image soit en arrière plan alors on prend un composant `<ImageBackground>`.
+
+
+&nbsp;
+## 14 - Custom Components & Props
+---
+Video : https://youtu.be/6euMQsGt7Qs  
+
+Comment crée des composants réutilisable et avec de paramètre, les `props`.

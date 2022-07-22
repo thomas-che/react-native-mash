@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Button, Linking, ScrollView, RefreshControl, FlatList, SectionList, TextInput, Keyboard, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, Pressable, Alert, ToastAndroid, Modal, Image, ImageBackground } from 'react-native';
+import CustomButton from './src/components/CustomButton';
+import Header from './src/components/Header';
 
 export default function App() {
 
@@ -17,8 +19,9 @@ export default function App() {
     return (
         <ImageBackground 
             style={styles.body}
-            source={require('./assets/bg.jpg')}
+            source={require('./src/assets/bg.jpg')}
         >
+        <Header />
         <Modal
             visible={showWarning}
             transparent
@@ -54,19 +57,15 @@ export default function App() {
             placeholder='e.g. John'
             onChangeText={(value) => SetName(value)}
         />
-        <Pressable
-            onPress={onPressHandler}
-            hitSlop={{ top: 10, bottom: 10, right: 10, left: 10 }}
-            android_ripple={{ color: '#00f' }}
-            style={({ pressed }) => [
-                { backgroundColor: pressed ? '#dddddd' : '#00ff00' },
-                styles.button
-            ]}
-        >
-            <Text style={styles.text}>
-                {submitted ? 'Clear' : 'Submit'}
-            </Text>
-        </Pressable>
+        <CustomButton 
+            onPressFunction={onPressHandler}
+            title={submitted ? 'Clear' : 'Submit'}
+        />
+        <CustomButton 
+            onPressFunction={onPressHandler}
+            title={'TEST'}
+            style={{margin: 10, backgroundColor: "#f00"}}
+        />
         {
             submitted ?
             <View style={styles.body}>
@@ -75,14 +74,14 @@ export default function App() {
                 </Text>
                 <Image
                     style={styles.image}
-                    source={require('./assets/validator.png')}
+                    source={require('./src/assets/validator.png')}
                     resizeMode='stretch'
                 />
             </View>
             :
             <Image
                 style={styles.image}
-                source={require('./assets/error.png')}
+                source={require('./src/assets/error.png')}
                 resizeMode='stretch'
             />
         }
