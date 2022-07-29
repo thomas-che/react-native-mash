@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import GlobalStyle from '../styles/GlobalStyle';
 
 export default function ScreenA ({navigation, route}) {
 
@@ -9,7 +10,7 @@ export default function ScreenA ({navigation, route}) {
 
     return (
         <View style={styles.body}>
-            <Text style={styles.text}>
+            <Text style={[GlobalStyle.CustomFont, styles.text]}>
                 Screen A
             </Text>
             <Pressable

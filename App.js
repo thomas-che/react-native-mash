@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import ScreenA from './src/components/ScreenA';
-import ScreenB from './src/components/ScreenB';
+import ScreenA from './src/screens/ScreenA';
+import ScreenB from './src/screens/ScreenB';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';

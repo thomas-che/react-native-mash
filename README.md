@@ -26,6 +26,7 @@ Table des matières.
 > * [17 - React Navigation V5 - Drawer Navigation - Side Menu](#17---React-Navigation-V5---Drawer-Navigation---Side-Menu)
 > * [18 - React Navigation V5 - Passing Data Between Screens](#18---React-Navigation-V5---Passing-Data-Between-Screens)
 > * [19 - Custom Fonts in React Native CLI & Expo Projects](#19---Custom-Fonts-in-React-Native-CLI-&-Expo-Projects)
+> * [20 - Global Styles & How to Use Custom Fonts Globally in Project](#20---Global-Styles-&-How-to-Use-Custom-Fonts-Globally-in-Project)
 
 
 &nbsp;
@@ -364,3 +365,11 @@ npx react-native link
 ```
 
 Mais ne fonctionne pas...
+
+
+&nbsp;
+## 19 - Global Styles & How to Use Custom Fonts Globally in Project
+---
+Video : https://youtu.be/sM5Rx4LvjyQ  
+
+On crée un fichier JS dans le quel on définira notre style. Ensuite on l'importera dans les vues.  
