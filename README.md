@@ -24,6 +24,7 @@ Table des matières.
 > * [15 - React Navigation V5 - Stack Navigator](#15---React-Navigation-V5---Stack-Navigator)
 > * [16 - React Navigation V5 - Tab Navigator - Material Tab at Bottom &Top](#16---React-Navigation-V5---Tab-Navigator---Material-Tab-at-Bottom-&Top)
 > * [17 - React Navigation V5 - Drawer Navigation - Side Menu](#17---React-Navigation-V5---Drawer-Navigation---Side-Menu)
+> * [18 - React Navigation V5 - Passing Data Between Screens](#18---React-Navigation-V5---Passing-Data-Between-Screens)
 
 
 &nbsp;
@@ -341,3 +342,11 @@ npm install react-native-reanimated
 ```
 
 Impossible de faire fonctionner...
+
+
+&nbsp;
+## 18 - React Navigation V5 - Passing Data Between Screens
+---
+Video : https://youtu.be/D4dDN4nXSns  
+
+On rajoute un objet `route` dans notre composant, on l'envoi dans notre autre écran en le passant en paramètre lors de notre appel de la vue puis on le récupère avec `route.params`.  

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-export default function ScreenA ({navigation}) {
+export default function ScreenA ({navigation, route}) {
 
     const onPressHandler = () => {
-        navigation.navigate('Screen_B')
+        navigation.navigate('Screen_B', {ItemName: 'Item from Screen_A', ItemId: 12})
     }
 
     return (
@@ -20,6 +20,9 @@ export default function ScreenA ({navigation}) {
                     Aller au Screen B
                 </Text>
             </Pressable>
+            <Text style={styles.text}>
+                {route.params?.Message}
+            </Text>
         </View>
     )
 }
