@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Home from './src/screens/Home';
-import Login from './src/screens/Login';
+import ScreenA from './src/screens/ScreenA';
+import ScreenB from './src/screens/ScreenB';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -15,18 +15,15 @@ export default function App() {
 
     return (
         <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName='Login'
-          >
+        <Stack.Navigator>
           <Stack.Screen
-            name="Login"
-            component={Login}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-              name="Home"
-              component={Home}
+              name="Screen_A"
+              component={ScreenA}
             />
+          <Stack.Screen
+            name="Screen_B"
+            component={ScreenB}
+          />
         </Stack.Navigator>
       </NavigationContainer>
       );
