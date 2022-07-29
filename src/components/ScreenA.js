@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 40,
         margin: 10,
-        fontWeight: 'bold',
+        fontFamily: 'SquarePeg-Regular'
     },
     buttonText: {
         fontSize: 15,
