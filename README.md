@@ -23,6 +23,7 @@ Table des matières.
 > * [14 - Custom Components & Props](#14---Custom-Components-&-Props)
 > * [15 - React Navigation V5 - Stack Navigator](#15---React-Navigation-V5---Stack-Navigator)
 > * [16 - React Navigation V5 - Tab Navigator - Material Tab at Bottom &Top](#16---React-Navigation-V5---Tab-Navigator---Material-Tab-at-Bottom-&Top)
+> * [17 - React Navigation V5 - Drawer Navigation - Side Menu](#17---React-Navigation-V5---Drawer-Navigation---Side-Menu)
 
 
 &nbsp;
@@ -323,3 +324,20 @@ Install de Material top tab naviagtor
 npm install @react-navigation/material-top-tabs react-native-tab-view
 npm install react-native-pager-view
 ```
+
+
+&nbsp;
+## 17 - React Navigation V5 - Drawer Navigation - Side Menu
+---
+Video : https://youtu.be/M4WNSjTWFDo  
+Doc drawer : https://reactnavigation.org/docs/drawer-navigator  
+
+Install Drawer
+```bash
+npm install @react-navigation/drawer
+npm install react-native-gesture-handler react-native-reanimated
+npm install react-native-reanimated
+
+```
+
+Impossible de faire fonctionner...
