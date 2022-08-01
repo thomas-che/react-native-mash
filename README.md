@@ -30,6 +30,7 @@ Table des matières.
 > * [21 - AsyncStorage - How to make an Offline Login with Async Storage](#21---AsyncStorage---How-to-make-an-Offline-Login-with-Async-Storage)
 > * [22 - SQLite Database - How to make an Offline Login with SQLite](#22---SQLite-Database---How-to-make-an-Offline-Login-with-SQLite)
 > * [23 - Redux - State Management](#23---Redux---State-Management)
+> * [24 - How to Fetch Data from an API Using Redux](#24---How-to-Fetch-Data-from-an-API-Using-Redux)
 
 
 &nbsp;
@@ -423,3 +424,13 @@ Pour utiliser les Hooks on passe par un dispatch :
 const dispatch = useDispatch();
 onChangeText={(value)=>dispatch(setName(value))}
 ```
+
+
+&nbsp;
+## 24 - How to Fetch Data from an API Using Redux
+---
+Video : https://youtu.be/DYJVl6vVCEI  
+Doc fetch : https://reactnative.dev/docs/network
+
+On crée une action pour récupérer des datas d'une API. Puis on met ça dans un reducer et enfin on l'appel. 
+Dans une FlatList on y injecte les datas.  

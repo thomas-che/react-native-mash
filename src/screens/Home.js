@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import { Alert, AsyncStorage, Pressable, StyleSheet, Text, View, TextInput } from 'react-native';
+import { Alert, AsyncStorage, Pressable, StyleSheet, Text, View, TextInput, FlatList } from 'react-native';
 import GlobalStyle from '../styles/GlobalStyle';
 import CustomButton from '../components/CustomButton';
 import SQLite from 'react-native-sqlite-storage';
 import { useSelector, useDispatch } from 'react-redux';
-import { setName, setAge, increaseAge } from '../redux/action';
+import { setName, setAge, increaseAge, getApiCall } from '../redux/action';
 
 const db = SQLite.openDatabase(
     {
@@ -21,7 +21,7 @@ export default function Home ({navigation, route}) {
         navigation.navigate('Login', {ItemName: 'Item from Home', ItemId: 12})
     }
 
-    const {name, age} = useSelector(state=>state.userReducer);
+    const {name, age, movies} = useSelector(state=>state.userReducer);
     const dispatch = useDispatch();
 
     const getData = () => {
@@ -50,6 +50,7 @@ export default function Home ({navigation, route}) {
 
     useEffect(() => {
         getData();
+        dispatch(getApiCall())
     }, []);
     
     const updateData = async () => {
@@ -89,42 +90,18 @@ export default function Home ({navigation, route}) {
     return (
         <View style={styles.body}>
             <Text style={[GlobalStyle.CustomFont, styles.text]}>
-                Hello {name}, age = {age}
+                Hello {name}
             </Text>
-            <Pressable
-                onPress={onPressHandler}
-                style={styles.button}
-            >
-                <Text style={styles.buttonText}>
-                    Login page
-                </Text>
-            </Pressable>
-            <TextInput 
-                style={styles.textInput}
-                value={name}
-                onChangeText={(value)=>dispatch(setName(value))}
+            <FlatList 
+                data={movies}
+                renderItem={({item}) => (
+                    <View style={styles.item}>
+                        <Text style={styles.itemTitle}>{item.title}</Text>
+                        <Text style={styles.itemYear}>{item.releaseYear}</Text>
+                    </View>
+                )}
             />
-            <CustomButton 
-                title='Update'
-                color='#fff'
-                style={styles.customButton}
-                onPressFunction={updateData}
-            />
-            <CustomButton 
-                title='Remove'
-                color='#000'
-                style={styles.customButton}
-                onPressFunction={removeData}
-            />
-            <CustomButton 
-                title='Increase Age'
-                color='#00f'
-                style={styles.customButton}
-                onPressFunction={()=>{dispatch(increaseAge())}}
-            />
-            <Text style={styles.text}>
-                {route.params?.Message}
-            </Text>
+            
         </View>
     )
 }
@@ -160,4 +137,21 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
     },
+    item: {
+        textAlign: 'center',
+        borderColor: '#333',
+        borderWidth: 1,
+        width: 300,
+        borderRadius: 6,
+        paddingLeft: 10,
+        paddingRight: 10,
+        margin: 7
+    },
+    itemTitle: {
+        fontSize: 25,
+        fontWeight: 'bold'
+    },
+    itemYear: {
+        color:"#999"
+    }
 });

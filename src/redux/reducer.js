@@ -1,8 +1,9 @@
-import { SET_USER_NAME, SET_USER_AGE, INCREASE_AGE } from "./action";
+import { SET_USER_NAME, SET_USER_AGE, INCREASE_AGE, GET_API_CALL } from "./action";
 
 const initialSate = {
     name: '',
     age: 0,
+    movies: []
 }
 
 function userReducer(state=initialSate, action){
@@ -12,7 +13,9 @@ function userReducer(state=initialSate, action){
         case SET_USER_AGE:
             return {...state, age: action.payload};
         case INCREASE_AGE:
-            return {...state, age: state.age + 1};    
+            return {...state, age: state.age + 1}; 
+        case GET_API_CALL:
+            return {...state, movies: action.payload}; 
         default:
             return state;
     }
