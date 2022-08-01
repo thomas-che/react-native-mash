@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import { Alert, AsyncStorage, Pressable, StyleSheet, Text, View, TextInput, FlatList } from 'react-native';
+import { Alert, AsyncStorage, Pressable, StyleSheet, Text, View, TextInput, FlatList, TouchableOpacity } from 'react-native';
 import GlobalStyle from '../styles/GlobalStyle';
 import CustomButton from '../components/CustomButton';
 import SQLite from 'react-native-sqlite-storage';
 import { useSelector, useDispatch } from 'react-redux';
 import { setName, setAge, increaseAge, getApiCall } from '../redux/action';
+import PushNotification from "react-native-push-notification";
 
 const db = SQLite.openDatabase(
     {
@@ -87,6 +88,28 @@ export default function Home ({navigation, route}) {
         }        
     }
 
+    const handleNotification = (item, index) => {
+
+        PushNotification.cancelAllLocalNotifications();
+
+        PushNotification.localNotification({
+            channelId: 'test-channel',
+            title: 'Tu as cliqué sur le film : '+item.title,
+            message: 'Le message : le film date de l année '+item.releaseYear,
+            bigText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, tenetur? Qui quo illo officiis aliquam sunt accusamus incidunt quas reprehenderit nesciunt, facere possimus, veritatis porro. Odio itaque natus eius vel?",
+            color: "red",
+            //id: index
+        })
+
+        PushNotification.localNotificationSchedule({
+            channelId: 'test-channel',
+            title: 'ALARM',
+            message: 'Le message : le film date de l année '+item.releaseYear,
+            date: new Date(Date.now() + 5*1000),
+            allowWhileIdle: true,
+        })
+    }
+
     return (
         <View style={styles.body}>
             <Text style={[GlobalStyle.CustomFont, styles.text]}>
@@ -94,12 +117,17 @@ export default function Home ({navigation, route}) {
             </Text>
             <FlatList 
                 data={movies}
-                renderItem={({item}) => (
-                    <View style={styles.item}>
-                        <Text style={styles.itemTitle}>{item.title}</Text>
-                        <Text style={styles.itemYear}>{item.releaseYear}</Text>
-                    </View>
+                renderItem={({item, index}) => (
+                    <TouchableOpacity
+                        onPress={() => handleNotification(item, index)}
+                    >
+                        <View style={styles.item}>
+                            <Text style={styles.itemTitle}>{item.title}</Text>
+                            <Text style={styles.itemYear}>{item.releaseYear}</Text>
+                        </View>
+                    </TouchableOpacity>
                 )}
+                keyExtractor={(item, index) => index.toString()}
             />
             
         </View>

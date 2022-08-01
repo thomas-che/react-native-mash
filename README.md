@@ -31,6 +31,7 @@ Table des matières.
 > * [22 - SQLite Database - How to make an Offline Login with SQLite](#22---SQLite-Database---How-to-make-an-Offline-Login-with-SQLite)
 > * [23 - Redux - State Management](#23---Redux---State-Management)
 > * [24 - How to Fetch Data from an API Using Redux](#24---How-to-Fetch-Data-from-an-API-Using-Redux)
+> * [25 - Local & Scheduled Push Notification](#25---Local-&-Scheduled-Push-Notification)
 
 
 &nbsp;
@@ -65,6 +66,8 @@ On fait un Wripe Data pour cette appareil puis on le lance.
 
 On retourne sur notre app et on la lance.  
 ```bash
+expo start
+
 # Affiche les devices Android dispo
 A
 # Sélectionne emulator
@@ -434,3 +437,36 @@ Doc fetch : https://reactnative.dev/docs/network
 
 On crée une action pour récupérer des datas d'une API. Puis on met ça dans un reducer et enfin on l'appel. 
 Dans une FlatList on y injecte les datas.  
+
+
+&nbsp;
+## 25 - Local & Scheduled Push Notification
+---
+Video : https://youtu.be/RgN1TEnULVQ    
+Doc push notification : https://github.com/zo0r/react-native-push-notification
+
+Install du module de notification
+```bash
+npm install --save react-native-push-notification
+```
+
+> **Warning**  
+> Pour IOS installer ce module https://github.com/react-native-push-notification/ios
+
+Ajouter dans `android/build.gradle` on ajoute les 2 lignes suivantes
+```js
+googlePlayServicesVersion = "+"
+firebaseMessagingVersion = "21.1.0"
+```
+
+Aucune modification du `android/app/src/main/AndroidManifest.xml`. Puis ajout de la couleur dans `android/app/src/main/res/values/colors.xml`.  
+
+Puis on l'initialise dans l'`index.js`. On crée notre channel (pour les Androids). 
+Et enfin on peut appeler nos notification en local, il y a des paramètres minimum pour les notifs.
+```js
+PushNotification.localNotification({
+    channelId: 'test-channel',
+    title: 'Tu as cliqué sur le film : '+item.title,
+    message: 'Le message : le film date de l année '+item.releaseYear,
+})
+```
