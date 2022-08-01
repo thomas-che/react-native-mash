@@ -28,6 +28,7 @@ Table des matières.
 > * [19 - Custom Fonts in React Native CLI & Expo Projects](#19---Custom-Fonts-in-React-Native-CLI-&-Expo-Projects)
 > * [20 - Global Styles & How to Use Custom Fonts Globally in Project](#20---Global-Styles-&-How-to-Use-Custom-Fonts-Globally-in-Project)
 > * [21 - AsyncStorage - How to make an Offline Login with Async Storage](#21---AsyncStorage---How-to-make-an-Offline-Login-with-Async-Storage)
+> * [22 - SQLite Database - How to make an Offline Login with SQLite](#22---SQLite-Database---How-to-make-an-Offline-Login-with-SQLite)
 
 
 &nbsp;
@@ -369,7 +370,7 @@ Mais ne fonctionne pas...
 
 
 &nbsp;
-## 19 - Global Styles & How to Use Custom Fonts Globally in Project
+## 20 - Global Styles & How to Use Custom Fonts Globally in Project
 ---
 Video : https://youtu.be/sM5Rx4LvjyQ  
 
@@ -377,10 +378,23 @@ On crée un fichier JS dans le quel on définira notre style. Ensuite on l'impor
 
 
 &nbsp;
-## 20 - AsyncStorage - How to make an Offline Login with Async Storage 
+## 21 - AsyncStorage - How to make an Offline Login with Async Storage 
 ---
 Video : https://youtu.be/CmQIMrGnBDs  
 Doc AsyncStorage : https://react-native-async-storage.github.io/async-storage/docs/api
 
 On utilise AsyncStorage pour stocké des information en local.  
 Pour charger une fonction on peut utiliser un `useEffect` et appeler notre fonction.   
+
+
+&nbsp;
+## 22 - SQLite Database - How to make an Offline Login with SQLite
+---
+Video : https://youtu.be/wAyizHBFQEs  
+
+Install module pour utiliser [SQLite dans react-native](https://github.com/andpor/react-native-sqlite-storage).  
+```bash
+npm install --save react-native-sqlite-storage
+```
+
+On utilise un object qui nous fait des transactions ou l'on écrit du sql.  

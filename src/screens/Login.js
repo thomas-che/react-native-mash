@@ -1,44 +1,79 @@
 import React, {useEffect, useState} from 'react';
-import { Pressable, StyleSheet, Text, View, Image, TextInput, Alert, AsyncStorage } from 'react-native';
+import { Pressable, StyleSheet, Text, View, Image, TextInput, Alert } from 'react-native';
 import CustomButton from '../components/CustomButton';
+import SQLite from 'react-native-sqlite-storage';
+
+const db = SQLite.openDatabase(
+    {
+        name:'MainDB',
+        location:'default'
+    },
+    () => {},
+    error => {console.log('ERROR openDatabase'+error)}
+);
 
 export default function ScreenA ({navigation}) {
 
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
 
+    const createTable = () => {
+        db.transaction((tx) => {
+            tx.executeSql(
+                "CREATE TABLE IF NOT EXISTS "
+                +"Users "
+                +"(ID INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, Age INTEGER);"
+            ),
+            [],
+            () => {
+                console.log('Create table succes');
+            },
+            error => {
+                console.log('ERROR create table');
+            }
+        })
+    }
+
     const setData = async () => {
         if(name.length == 0 || age.length == 0) {
             Alert.alert('Attention', 'Le pseudo doit ne doit pas être vide')
         } else {
             try {
-                var user = {
-                    pseudo: name,
-                    age: age
-                }
-                await AsyncStorage.setItem('UserData', JSON.stringify(user));
+                await db.transaction( async (tx) => {
+                    await tx.executeSql(
+                        "INSERT INTO Users (Name, Age) VALUES (?, ?);",
+                        [name, age]
+                    )
+                })
                 navigation.navigate('Home');
             } catch (error) {
-                console.log(error);
+                console.log('ERROR setData'+error);
             }
         }
     }
 
     const getData = () => {
         try {
-            AsyncStorage.getItem('UserData')
-                .then(value => {
-                    if(value != null){
-                        navigation.navigate('Home')
+            db.transaction((tx) => {
+                tx.executeSql(
+                    "SELECT Name, Age FROM Users WHERE ID=1;",
+                    [],
+                    (tx, results) => {
+                        var len = results.rows.length;
+                        if(0<len){
+                            navigation.navigate('Home')
+                        }
                     }
-                })
+                )
+            });
         } catch (error) {
-            console.log(error);
+            console.log('ERROR getData'+error);
         }
     }
 
     useEffect(() => {
         getData();
+        createTable();
     }, []);
 
     return (

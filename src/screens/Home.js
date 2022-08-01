@@ -2,6 +2,16 @@ import React, {useEffect, useState} from 'react';
 import { Alert, AsyncStorage, Pressable, StyleSheet, Text, View, TextInput } from 'react-native';
 import GlobalStyle from '../styles/GlobalStyle';
 import CustomButton from '../components/CustomButton';
+import SQLite from 'react-native-sqlite-storage';
+
+const db = SQLite.openDatabase(
+    {
+        name:'MainDB',
+        location:'default'
+    },
+    () => {},
+    error => {console.log('ERROR openDatabase'+error)}
+);
 
 export default function Home ({navigation, route}) {
 
@@ -14,16 +24,25 @@ export default function Home ({navigation, route}) {
 
     const getData = () => {
         try {
-            AsyncStorage.getItem('UserData')
-                .then(value => {
-                    if(value != null){
-                        let user = JSON.parse(value)
-                        setName(user.pseudo)
-                        setAge(user.age)
+            db.transaction((tx) => {
+                tx.executeSql(
+                    "SELECT Name, Age FROM Users",
+                    [],
+                    (tx, results) => {
+                        var len = results.rows.length;
+                        if(0<len){
+                            var userName = results.rows.item(0).Name;
+                            var userAge = results.rows.item(0).Age;
+                            setName(userName);
+                            setAge(userAge);
+                        }
                     }
-                })
+                )
+            }, function(error) {
+                console.log('Transaction ERROR: ' + error.message);
+            })
         } catch (error) {
-            console.log(error);
+            console.log('Error getData'+error);
         }
     }
 
@@ -36,9 +55,14 @@ export default function Home ({navigation, route}) {
             Alert.alert('Attention', 'Le pseudo doit ne doit pas être vide')
         } else {
             try {
-                var user = {pseudo: name}
-                await AsyncStorage.mergeItem('UserData', JSON.stringify(user));
-                Alert.alert('Réussite', 'Login changé');
+                db.transaction((tx) => {
+                    tx.executeSql(
+                        "UPDATE Users SET Name = ? WHERE ID=1;",
+                        [name],
+                        () => {Alert.alert('Success !', 'Le pseudo updated')},
+                        error => {console.log('Error updateData '+error)}
+                    )
+                });
             } catch (error) {
                 console.log(error);
             }
@@ -47,8 +71,14 @@ export default function Home ({navigation, route}) {
 
     const removeData = async () => {
         try {
-            await AsyncStorage.removeItem('UserName');
-            navigation.navigate('Login')
+            db.transaction((tx) => {
+                tx.executeSql(
+                    "DELETE FROM Users WHERE ID=1;",
+                    [],
+                    () => {navigation.navigate('Login')},
+                    error => {console.log('Error removeData '+error)}
+                )
+            });
         } catch (error) {
             console.log(error);
         }        
