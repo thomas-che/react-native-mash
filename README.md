@@ -29,6 +29,7 @@ Table des matières.
 > * [20 - Global Styles & How to Use Custom Fonts Globally in Project](#20---Global-Styles-&-How-to-Use-Custom-Fonts-Globally-in-Project)
 > * [21 - AsyncStorage - How to make an Offline Login with Async Storage](#21---AsyncStorage---How-to-make-an-Offline-Login-with-Async-Storage)
 > * [22 - SQLite Database - How to make an Offline Login with SQLite](#22---SQLite-Database---How-to-make-an-Offline-Login-with-SQLite)
+> * [23 - Redux - State Management](#23---Redux---State-Management)
 
 
 &nbsp;
@@ -398,3 +399,27 @@ npm install --save react-native-sqlite-storage
 ```
 
 On utilise un object qui nous fait des transactions ou l'on écrit du sql.  
+
+
+&nbsp;
+## 23 - Redux - State Management
+---
+Video : https://youtu.be/BtJoy4G3N8U  
+
+Installer le module Redux :
+```bash
+npm install redux
+npm install react-redux
+npm install redux-thunk
+```
+
+La redux structure :
+- action.js fichier pour les operations sur les states
+- reducer.js pour executer les operations definit par les constantes d'actions
+- store.js qui fait la liaison entre les composants et App.js
+
+Pour utiliser les Hooks on passe par un dispatch :
+```js
+const dispatch = useDispatch();
+onChangeText={(value)=>dispatch(setName(value))}
+```

@@ -3,6 +3,8 @@ import { Alert, AsyncStorage, Pressable, StyleSheet, Text, View, TextInput } fro
 import GlobalStyle from '../styles/GlobalStyle';
 import CustomButton from '../components/CustomButton';
 import SQLite from 'react-native-sqlite-storage';
+import { useSelector, useDispatch } from 'react-redux';
+import { setName, setAge, increaseAge } from '../redux/action';
 
 const db = SQLite.openDatabase(
     {
@@ -19,22 +21,22 @@ export default function Home ({navigation, route}) {
         navigation.navigate('Login', {ItemName: 'Item from Home', ItemId: 12})
     }
 
-    const [name, setName] = useState('');
-    const [age, setAge] = useState('');
+    const {name, age} = useSelector(state=>state.userReducer);
+    const dispatch = useDispatch();
 
     const getData = () => {
         try {
             db.transaction((tx) => {
                 tx.executeSql(
-                    "SELECT Name, Age FROM Users",
+                    "SELECT Name, Age FROM Users ORDER BY ID DESC",
                     [],
                     (tx, results) => {
                         var len = results.rows.length;
                         if(0<len){
                             var userName = results.rows.item(0).Name;
                             var userAge = results.rows.item(0).Age;
-                            setName(userName);
-                            setAge(userAge);
+                            dispatch(setName(userName))
+                            dispatch(setAge(userAge))
                         }
                     }
                 )
@@ -100,7 +102,7 @@ export default function Home ({navigation, route}) {
             <TextInput 
                 style={styles.textInput}
                 value={name}
-                onChangeText={(value)=>setName(value)}
+                onChangeText={(value)=>dispatch(setName(value))}
             />
             <CustomButton 
                 title='Update'
@@ -113,6 +115,12 @@ export default function Home ({navigation, route}) {
                 color='#000'
                 style={styles.customButton}
                 onPressFunction={removeData}
+            />
+            <CustomButton 
+                title='Increase Age'
+                color='#00f'
+                style={styles.customButton}
+                onPressFunction={()=>{dispatch(increaseAge())}}
             />
             <Text style={styles.text}>
                 {route.params?.Message}

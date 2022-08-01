@@ -6,7 +6,8 @@ import Login from './src/screens/Login';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import { Provider } from 'react-redux';
+import { Store } from './src/redux/store';
 
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
     const Stack = createNativeStackNavigator();
 
     return (
+        <Provider store={Store}>
         <NavigationContainer>
         <Stack.Navigator
           initialRouteName='Login'
@@ -30,6 +32,7 @@ export default function App() {
             />
         </Stack.Navigator>
       </NavigationContainer>
+      </Provider>
       );
 
 

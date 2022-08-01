@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import { Pressable, StyleSheet, Text, View, Image, TextInput, Alert } from 'react-native';
 import CustomButton from '../components/CustomButton';
 import SQLite from 'react-native-sqlite-storage';
+import { useSelector, useDispatch } from 'react-redux';
+import { setName, setAge } from '../redux/action';
 
 const db = SQLite.openDatabase(
     {
@@ -12,10 +14,10 @@ const db = SQLite.openDatabase(
     error => {console.log('ERROR openDatabase'+error)}
 );
 
-export default function ScreenA ({navigation}) {
+export default function Login ({navigation}) {
 
-    const [name, setName] = useState('');
-    const [age, setAge] = useState('');
+    const {name, age} = useSelector(state=>state.userReducer);
+    const dispatch = useDispatch();
 
     const createTable = () => {
         db.transaction((tx) => {
@@ -39,12 +41,15 @@ export default function ScreenA ({navigation}) {
             Alert.alert('Attention', 'Le pseudo doit ne doit pas être vide')
         } else {
             try {
+                dispatch(setName(name))
+                dispatch(setAge(age))
                 await db.transaction( async (tx) => {
                     await tx.executeSql(
                         "INSERT INTO Users (Name, Age) VALUES (?, ?);",
                         [name, age]
                     )
                 })
+
                 navigation.navigate('Home');
             } catch (error) {
                 console.log('ERROR setData'+error);
@@ -56,7 +61,7 @@ export default function ScreenA ({navigation}) {
         try {
             db.transaction((tx) => {
                 tx.executeSql(
-                    "SELECT Name, Age FROM Users WHERE ID=1;",
+                    "SELECT Name, Age FROM Users ORDER BY ID DESC",
                     [],
                     (tx, results) => {
                         var len = results.rows.length;
@@ -85,12 +90,12 @@ export default function ScreenA ({navigation}) {
             <TextInput 
                 style={styles.textInput}
                 placeholder='pseudo'
-                onChangeText={(value)=>setName(value)}
+                onChangeText={(value)=>dispatch(setName(value))}
             />
             <TextInput 
                 style={styles.textInput}
                 placeholder='age'
-                onChangeText={(value)=>setAge(value)}
+                onChangeText={(value)=>dispatch(setAge(value))}
             />
             <CustomButton 
                 title='Login'
