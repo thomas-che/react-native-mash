@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './src/screens/Home';
 import Login from './src/screens/Login';
+import Map from './src/screens/Map';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -30,6 +31,11 @@ export default function App() {
               component={Home}
               options={{headerShown: false}}
             />
+          <Stack.Screen
+            name="Map"
+            component={Map}
+            options={{headerShown: false}}
+          />
         </Stack.Navigator>
       </NavigationContainer>
       </Provider>

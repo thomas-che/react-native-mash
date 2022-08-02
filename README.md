@@ -33,6 +33,7 @@ Table des matières.
 > * [24 - How to Fetch Data from an API Using Redux](#24---How-to-Fetch-Data-from-an-API-Using-Redux)
 > * [25 - Local & Scheduled Push Notification](#25---Local-&-Scheduled-Push-Notification)
 > * [26 - Push Notification with Firebase - Remote Notification](#26---Push-Notification-with-Firebase---Remote-Notification)
+> * [27 - Google Maps](#27---Google-Maps)
 
 
 &nbsp;
@@ -480,3 +481,11 @@ Video : https://youtu.be/FsUNPSA6Ogg
 Doc push notification : https://github.com/zo0r/react-native-push-notification
 
 Suivre le tuto. Mais cela ne fonctionne pas...
+
+
+&nbsp;
+## 27 - Google Maps
+---
+Video : https://youtu.be/mhc8k_PoUJk    
+
+Debut de la vidées pour ajouter la map, mais pas finit car non utile pour la suite

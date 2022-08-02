@@ -119,7 +119,10 @@ export default function Home ({navigation, route}) {
                 data={movies}
                 renderItem={({item, index}) => (
                     <TouchableOpacity
-                        onPress={() => handleNotification(item, index)}
+                        onPress={() => {
+                            handleNotification(item, index);
+                            navigation.navigate('Map', {titre: item.title})
+                        }}
                     >
                         <View style={styles.item}>
                             <Text style={styles.itemTitle}>{item.title}</Text>
