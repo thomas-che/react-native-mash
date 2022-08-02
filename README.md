@@ -32,6 +32,7 @@ Table des matières.
 > * [23 - Redux - State Management](#23---Redux---State-Management)
 > * [24 - How to Fetch Data from an API Using Redux](#24---How-to-Fetch-Data-from-an-API-Using-Redux)
 > * [25 - Local & Scheduled Push Notification](#25---Local-&-Scheduled-Push-Notification)
+> * [26 - Push Notification with Firebase - Remote Notification](#26---Push-Notification-with-Firebase---Remote-Notification)
 
 
 &nbsp;
@@ -470,3 +471,12 @@ PushNotification.localNotification({
     message: 'Le message : le film date de l année '+item.releaseYear,
 })
 ```
+
+
+&nbsp;
+## 26 - Push Notification with Firebase - Remote Notification
+---
+Video : https://youtu.be/FsUNPSA6Ogg  
+Doc push notification : https://github.com/zo0r/react-native-push-notification
+
+Suivre le tuto. Mais cela ne fonctionne pas...

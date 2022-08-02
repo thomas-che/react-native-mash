@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "233035978949",
+    "project_id": "test-mashtuto",
+    "storage_bucket": "test-mashtuto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233035978949:android:63778ba8c5c4c26290b8ac",
+        "android_client_info": {
+          "package_name": "lci.meteor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233035978949-jch442862lcjmnhg6vlna1fglvons4bg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUMspX_5x3Y-UTjk-3rNY35cRUF3ViglU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233035978949-jch442862lcjmnhg6vlna1fglvons4bg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
