@@ -34,6 +34,7 @@ Table des matières.
 > * [25 - Local & Scheduled Push Notification](#25---Local-&-Scheduled-Push-Notification)
 > * [26 - Push Notification with Firebase - Remote Notification](#26---Push-Notification-with-Firebase---Remote-Notification)
 > * [27 - Google Maps](#27---Google-Maps)
+> * [28 - Generating APK & Android App Bundle for Google Play Store](#28---Generating-APK-&-Android-App-Bundle-for-Google-Play-Store)
 
 
 &nbsp;
@@ -106,7 +107,7 @@ ANDROID_PTOOLS : C:\Users\thomasc\AppData\Local\Android\Sdk\platform-tools
 Puis eject pour faire du react-native
 ```bash
 npm run eject
-# nom du package : lci.meteor
+# nom du package : com.thomasche.mashtuto
 
 # lance le Metro 
 npx react-native start
@@ -489,3 +490,22 @@ Suivre le tuto. Mais cela ne fonctionne pas...
 Video : https://youtu.be/mhc8k_PoUJk    
 
 Debut de la vidées pour ajouter la map, mais pas finit car non utile pour la suite
+
+
+&nbsp;
+## 28 - Generating APK & Android App Bundle for Google Play Store
+---
+Video : https://youtu.be/5tgcogEoIiQ  
+Doc : https://reactnative.dev/docs/signed-apk-android
+
+Changer dans le `package.json` le nom de l'appli.  
+Puis dans `android/app/src/main/res/values/strings.xml` on change le vrai nom de l'appli.  
+
+On se rend sur [https://appicon.co/](https://appicon.co/) puis on remplace les dossiers d'ici `android/app/src/main/res/`.
+
+(Puis on remplce partout le `lci.meteor` par `com.thomasche.mashtuto` et ainsi renomme le chemin d'access à l'appli apres `android/app/src/main/java/com`, et on fait un coup de `cd .\android\; .\gradlew clean`. )  
+
+
+```bash
+keytool -genkeypair -v -storetype PKCS12 -keystore mash-tuto.keystore -alias mash-tuto -keyalg RSA -keysize 2048 -validity 10000
+```

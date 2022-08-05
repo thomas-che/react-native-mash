@@ -1,4 +1,4 @@
-package lci.meteor.newarchitecture;
+package com.thomasche.mashtuto.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import lci.meteor.BuildConfig;
-import lci.meteor.newarchitecture.components.MainComponentsRegistry;
-import lci.meteor.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.thomasche.mashtuto.BuildConfig;
+import com.thomasche.mashtuto.newarchitecture.components.MainComponentsRegistry;
+import com.thomasche.mashtuto.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

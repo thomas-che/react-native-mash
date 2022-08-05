@@ -25,7 +25,7 @@
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "lci.meteor"
+      "package": "com.thomasche.mashtuto"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"

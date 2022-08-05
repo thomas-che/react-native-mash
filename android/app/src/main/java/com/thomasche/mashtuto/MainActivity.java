@@ -1,4 +1,4 @@
-package lci.meteor;
+package com.thomasche.mashtuto;
 
 import android.os.Build;
 import android.os.Bundle;

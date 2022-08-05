@@ -1,4 +1,4 @@
-package lci.meteor.newarchitecture.components;
+package com.thomasche.mashtuto.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

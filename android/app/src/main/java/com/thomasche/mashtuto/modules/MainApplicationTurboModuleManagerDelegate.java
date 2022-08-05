@@ -1,4 +1,4 @@
-package lci.meteor.newarchitecture.modules;
+package com.thomasche.mashtuto.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
